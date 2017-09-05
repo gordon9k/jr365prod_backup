@@ -1,0 +1,471 @@
+@CHARSET "ISO-8859-1";
+.nav-tabs.nav-justified>li>a{
+	border-bottom: 1px solid #82e563;	
+}
+.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:hover, .nav-tabs.nav-justified>.active>a:focus {
+	border-bottom-color: #82e563;
+	border-top-color: #82e563;
+	background-color: #50b748;
+	color:#fff;
+}
+.nav_wide > li{
+	float:left; list-style: none; 
+}
+.nav_wide > li > a{
+	height:100px; padding:5px; margin-left:5px;
+}
+.nav_wide > li > a:hover{
+	background-color:#d5ffd5; height:100px; padding:5px; border-radius:5px; color:#00bf00; margin-left:5px;
+} 
+
+.nav > li > a:hover{
+	background-color:#d5ffd5; border-radius:5px; color:#00bf00;
+}
+	
+header{
+	line-height: 20px;
+}
+body{
+	background-color:#ffffff;
+}
+.dashboard {
+	
+	border-radius:5px;
+	border:1px solid #dedede;	
+	box-shadow: 3px 3px 3px #aaaaaa;
+	padding:30px;
+	margin-top:-30px;
+	/*background: #e2fbe9;*/
+}
+
+
+.panel-heading > a {
+	color: #333333;
+}
+	
+@media (max-width: 767px){
+	h2 { padding-top:30px;}
+}
+	
+.jobseeker ul>li{
+	margin-top:10px;
+}
+.title, .data{
+	margin:5px;
+}	
+	
+#menu-open{
+	display:none;
+}
+#menu1{
+	display:block;
+}
+
+@media (max-width: 767px){
+	section {
+	padding: 40px 0px;
+	}
+	#app {
+		padding: 20px 0 0 0;
+	}
+	#menu-open{
+		display:none;
+	}
+	#menu1{			
+		display:block
+	}
+}
+	
+/* datepicker */	
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	display: none;
+	background-color:#ebebeb;
+	border-radius:10px;
+	border:2px solid #ddd;
+}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0em;
+	background-color:#ddd;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 2px;
+	width: 1.8em;
+	height: 1.8em;
+}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+	top: 1px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 2px;
+	color:#000;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 15px;color:#000;
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 1px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 15px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 45%;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+.ui-datepicker td {
+	border: 0;
+	padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: .2em;
+	text-align: right;
+	text-decoration: none;color:#888;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+	background-image: none;
+	margin: .7em 0 0 0;
+	padding: 0 .2em;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+	float: right;
+	margin: .5em .2em .4em;
+	cursor: pointer;
+	padding: .2em .6em .3em .6em;
+	width: auto;
+	overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+	float: left;
+}
+
+/* ZNK */
+.applied
+{
+	border-bottom: 1px solid grey;
+	position: relative;
+	width: 100%;	
+}
+
+.editclass
+{	/*
+	display: inline-block;*/
+	width: 20px;
+}
+	
+.job-type
+{
+	border-style: 1px solid grey;
+}
+
+/*.job-location:before 
+{
+	padding-top: 20px;
+}
+.job-location
+{
+	padding-top: 20px;
+}*/
+/*.img-responsive
+{
+	padding-top: 15px;
+}
+*/
+.imgprofile
+	{
+		width: 200px;
+		height: 200px;
+	}
+ .subscribecount {
+	position: relative;
+	height: 130px;		
+	
+}
+
+ #subscriber
+{
+	height: 140px;
+	background-color: grey;
+}
+
+#subscribe
+{		
+	padding-top:10px;
+}
+
+.subscribe {
+	border: 2px solid #82e563;
+	border-radius: 50%;
+	display: inline-block;
+	font-family: "Montserrat", Arial;
+	font-weight: bold;
+	height: 90px;
+	letter-spacing: -0.05em;
+	line-height: 1.2em;
+	margin: 10px;
+	padding-top: 30px;
+	text-transform: uppercase;
+	width: 100px;
+}
+
+.subscribe .number {
+		color: #fff;
+		font-size: 16px;
+	}
+
+	.subscribe .description {
+		color: #82e563;		
+	}
+
+@media (min-width: 1200px) {
+
+	#subscriber
+	{
+		display: none;
+	}
+}
+
+
+@media (max-width: 991px) {
+		.sl-slider-wrapper
+		{
+			display: none;
+		}
+		#featured-companies 
+		{
+			display: none;
+		}
+		#companies
+		{
+			display: none;
+		}
+		#credits{
+			display: none;
+		}
+		#stats
+		{
+			display: none;
+		}
+		#prefooter
+		{
+			display: none;
+		}
+		#header-background {			
+			display: block;
+		}			
+		
+	}
+	
+	.success_message {
+		color:#00b300; font-size:16px; font-weight:bold;
+	}
+	
+	.warning_message {
+		color:red; font-size:16px; font-weight:bold
+	}
+	
+	/* Switch ===================================================== */
+.switch,
+.switch * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+}
+
+.switch label {
+  cursor: pointer;
+}
+
+.switch label input[type=checkbox] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch label input[type=checkbox]:checked + .lever {
+background-color: #82e563;
+}
+
+.switch label input[type=checkbox]:checked + .lever:after {
+  background-color: #82e563; 
+  left: 24px;
+}
+
+.switch label .lever {
+  content: "";
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 15px;
+  background-color: #818181;
+  border-radius: 15px;
+  margin-right: 10px;
+  transition: background 0.3s ease;
+  vertical-align: middle;
+  margin: 0 16px;
+}
+
+.switch label .lever:after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  background-color: #F1F1F1;
+  border-radius: 21px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+  left: -5px;
+  top: -3px;
+  transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
+}
+
+input[type=checkbox]:checked:not(:disabled) ~ .lever:active::after,
+input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::after {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(38, 166, 154, 0.1);
+}
+
+input[type=checkbox]:not(:disabled) ~ .lever:active:after,
+input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.switch input[type=checkbox][disabled] + .lever {
+  cursor: default;
+}
+
+.switch label input[type=checkbox][disabled] + .lever:after,
+.switch label input[type=checkbox][disabled]:checked + .lever:after {
+  background-color: #BDBDBD;
+}
+
+/********************************** autocomplete ********************************/
+.ui-autocomplete {
+	position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;  
+    max-height: 100px;
+    overflow:scroll; 
+    padding: 4px 0;
+    margin: 0 0 10px 25px;
+    list-style: none;
+    background-color: #ffffff;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+}
+.ui-menu {
+	list-style:none;
+	padding: 2px;
+	margin: 0;
+	display:block;
+	float: left;
+}
+.ui-menu .ui-menu {
+	margin-top: -3px;
+}
+.ui-menu .ui-menu-item {
+	margin:0;
+	padding: 0;
+	zoom: 1;
+	float: left;
+	clear: left;
+	width: 100%;
+}
+.ui-menu .ui-menu-item a {
+	text-decoration:none;
+	display:block;
+	padding:.2em .4em;
+	line-height:1.5;
+	zoom:1;
+}
+.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-menu .ui-menu-item a.ui-state-active {
+	font-weight: normal;
+	margin: -1px;
+}
+				
+@media(max-width: 767px){
+	.mobile_contact {
+		display:block;
+	}
+	#btnSendMsg{
+		display:block;
+	}
+	#btnSendMsg1{
+		display:none;
+	}
+}	
+		
+@media(min-width: 767px){
+	.mobile_contact {
+		display:none;
+	}
+	#btnSendMsg{
+		display:none;
+	}
+	#btnSendMsg1{
+		display:block;
+	}
+}	
+
+.show_data{
+	color:#333; font-size:14px; font-weight: bold;
+}
+
