@@ -96,7 +96,8 @@ class JobController extends Controller
     }
 
     public function show($id)
-    {	$job = array();
+    {	
+        $job = array();
     	$job = $this->getJobbyId($id);
     	if($job != null)
     		return view('application.show', compact('job'));
@@ -124,8 +125,8 @@ class JobController extends Controller
                     return Redirect::to('job/'.encrypt($id).'/edit')
                     ->withErrors($validator)
                     ->withInput(Input::except('name'));
-                }
-                else {
+                } else 
+                {
                 	$job = job::findOrFail(decrypt($id));  
                 	if (Auth::user()->user_role == 1){   //super admin
                 		$emp = app('jobready365\Http\Controllers\CompanyController')->getCompanybyId(encrypt(Input::get('company_id')));

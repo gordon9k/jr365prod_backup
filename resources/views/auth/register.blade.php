@@ -68,14 +68,14 @@ $(document).ready(function() {
                     </span>
                 @endif               
            	</div>    
-	        <div class="col-sm-12 form-group">        	
+	        <!-- <div class="col-sm-12 form-group">        	
 	            <input id="login_name" type="text" placeholder='User Name' class="form-control" name="login_name" value="{{ old('login_name') }}" required autofocus>
 	           	@if ($errors->has('login_name'))
 	            	<span class="help-block">
 	                	<strong style='color:red;'> * {{ $errors->first('login_name') }}</strong>
 	               	</span>
 	           	@endif
-	        </div>
+	        </div> -->
 	        <div class="col-sm-12 form-group">
 	            <input id="telephone_no" type="text" onkeypress='return validateQty(event);' placeholder='Telephone No' class="form-control" name="telephone_no" value="{{ old('telephone_no') }}"  required>
 	            @if ($errors->has('telephone_no'))
@@ -84,14 +84,14 @@ $(document).ready(function() {
 	            </span>
 	            @endif
 	        </div>
-	        <div class="col-sm-12 form-group">
+	        <!-- <div class="col-sm-12 form-group">
 		            <input id="email" type="email" placeholder='Email' class="form-control" name="email" value="{{ old('email') }}">
 	                @if ($errors->has('email'))
 	                	<span class="help-block">
 	                 		<strong style='color:red;'> * {{ $errors->first('email') }}</strong>
 	                	</span>
 	                @endif
-	        </div>
+	        </div> -->
 	        <div class="col-sm-12 form-group">
 	            <input id="password" type="password" placeholder='Password' class="form-control" name="password" required>
 	            @if ($errors->has('password'))
@@ -103,14 +103,14 @@ $(document).ready(function() {
 	        <div class="col-sm-12 form-group">
 	            <input id="password-confirm" type="password" placeholder='Confirm Password' class="form-control" name="password_confirmation" required>
 	        </div>
-	        <div class="col-sm-12 form-group">
+	        <!-- <div class="col-sm-12 form-group">
 	            <div id='category_div'></div>
 	                @if ($errors->has('category'))
 	                    <span class="help-block">
 	                        <strong style="color:red"> * {{ $errors->first('category') }}</strong>
 	                    </span>
 	                @endif
-	        </div>
+	        </div> -->
 	        <div class="col-sm-12 form-group">
 	            <center><button type="submit" class="btn btn-primary green">Register</button></center>
 	        </div>
