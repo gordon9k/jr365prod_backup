@@ -30,7 +30,30 @@ Route::get('/{lang?}', 'HomeController@index',function ($locale) {
 });
 	
 Route::group(['prefix' => $locale], function (){
-	Auth::routes();
+	// Route::POST('/tmpRegister', 'Auth\RegisterController@tmpRegister');
+	Route::get('register', 'RegistrationController@create');
+	Route::post('register', 'RegistrationController@store')->name('storeRegister');
+	// Route::group(['middleware' => ['is.active']], function () {
+	Route::get('confirm/{phone}', 'RegistrationController@confirm')->name('confirm');
+	Route::get('resend/{phone}', 'RegistrationController@resendCode')->name('resendCode');
+	// });
+	Route::post('confirmation', 'RegistrationController@resendCode')->name('confirmCode');
+	
+	/**
+	 * Authentication Route
+	 */
+	Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+    Route::post('login', 'Auth\LoginController@login');
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+    // Password Reset Routes...
+    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+    Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+    /* End Authentication Route */
+
+	// Auth::routes();
 	Route::get('getLatestJob', 'JobController@getLatestJob'); //Home Page
 	Route::get('getLatestJobbyKeyword', 'JobController@getFilterJob'); //Home Page
 	Route::get('/application/{id}', 'ApplicationController@show');
@@ -44,13 +67,15 @@ Route::group(['prefix' => $locale], function (){
 	Route::get('/category_autocomplete', 'JobCategoryController@category_autocomplete');
 	Route::get('/policy', 'HomeController@policy');
 	Route::get('/terms', 'HomeController@terms');
+	Route::get('/download/android', 'HomeController@androidDownload');
+	Route::get('/download/ios', 'HomeController@iosDownload');
 });
 	
 Route::get('/language/{lang}', 'LanguageController@index');
 	
 Route::group(['middleware'=>'auth','prefix' => $locale], function (){
 
-		Route::GET('/dashboard', 'HomeController@dashboard');
+		Route::GET('/dashboard', 'HomeController@dashboard')->name('dashboard');
 		
 		Route::GET('/changepassword', function() {return view('auth.passwords.changepassword'); });
 		Route::POST('/changepassword', 'Auth\UpdatePasswordController@update');

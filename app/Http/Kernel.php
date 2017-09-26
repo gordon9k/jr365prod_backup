@@ -70,5 +70,6 @@ class Kernel extends HttpKernel
         'cors' => \jobready365\Http\Middleware\Cors::class,
     		
     	'lang' => \jobready365\Http\Middleware\Language::class,
+        'is.active' => \jobready365\Http\Middleware\ConfirmationMiddleware::class,
     ];
 }

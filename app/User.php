@@ -29,4 +29,21 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function confirmation($request)
+    {
+        $telephone_no = $request->input('telephone_no');
+        $activation_code = $request->input('activation_code');
+        $id = $request->input('id');
+
+        return static::where('id', $id)
+            ->where('telephone_no', $telephone_no)
+            ->where('activation_code', $activation_code)
+            ->first();
+    }
+
+    public function isActive()
+    {
+        return $this->is_active;
+    }
 }

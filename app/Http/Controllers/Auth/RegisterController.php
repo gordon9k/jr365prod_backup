@@ -32,8 +32,8 @@ class RegisterController extends Controller
 	 *
 	 * @var string
 	 */
-	//protected $redirectTo = '/home/register';
-	protected $redirectTo = '/en/dashboard';
+	// protected $redirectTo = '/en/dashboard';
+	// protected $redirectTo = '/en/confirmation';
 	/**
 	 * Create a new controller instance.
 	 *
@@ -41,6 +41,7 @@ class RegisterController extends Controller
 	 */
 	public function __construct()
 	{
+		// $this->middleware('auth');
 		$this->middleware('guest');
 	}
 	
@@ -59,8 +60,7 @@ class RegisterController extends Controller
 				'user_type' => 'required',
 				//'category'=>	'required',
 		]);
-	}
-	
+	}	
 	/**
 	 * Create a new user instance after a valid registration.
 	 *
@@ -68,32 +68,35 @@ class RegisterController extends Controller
 	 * @return User
 	 */
 	protected function create(array $data)
-	{	//print_r($data);
-		//return $data;
+	{	
 		$user_id = Uuid::uuid4()->getHex();
-		User::create([
+		$otp = rand(100000, 999999);
+
+		$user = User::create([
 				'id' => $user_id,
 				'login_name' => isset($data['login_name'])?$data['login_name']:'',
 				'email' => isset($data['email'])?$data['email']:'',
 				'telephone_no' => $data['telephone_no'],
 				'password' => bcrypt($data['password']),
 				'user_role' => isset($data['user_role'])?$data['user_role']:0,
-				'is_active' => 1,
+				'is_active' => 0,
 				'user_type' => $data['user_type'],
+				'activation_code' => $otp,
 				// 'category_id'=>$data['category'],
 				'remember_token' =>	csrf_token()
 		]);
-		
+
 		$this->createInfo($user_id,$data);		
-		return Auth::loginUsingId($user_id);
+		return $this->loginUsingId($user_id);
+		// return redirect()->route('confirm', compact('user'));
 	}
-	
+
 	public function createInfo($user_id, $data){
 		
 		$id = Uuid::uuid4()->getHex();
 		//Log::info('user type'.$data['user_type']);
 		if($data['user_type'] == 1) //employer
-		{	$expire = date('Y-m-d h:i:s', strtotime("+168 hours", strtotime(date('Y-m-d H:i:s'))));
+		{	$expire = date('Y-m-d h:i:s', strtotime("+168 hours", strtotime(date('Y-m-d h:i:s'))));
 			employer::create([
 					'id' => $id,
 					'user_id' => $user_id,

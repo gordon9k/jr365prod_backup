@@ -517,6 +517,19 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
         return false;
     }
 
+    public function registerConfirm($id, $remember = false)
+    {
+        $tmp_user = $this->provider->retrieveById($id);
+        dd($tmp_users);
+        
+        if (is_null($tmp_users)) {
+            $confirm = $this->confirm($user, $remember);
+
+            return view('auth.confirmation', compact('confirm'));
+        }
+        return false;
+    }
+
     /**
      * Log the given user ID into the application without sessions or cookies.
      *

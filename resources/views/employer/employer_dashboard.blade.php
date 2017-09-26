@@ -21,7 +21,7 @@
 			<div class="col-sm-4">	<span style='padding:10px;  border:2px solid #13ab15; color:#333; border-radius:7px; font-weight:bold; font-size:16px;'>{{ $employer_info[0]->package_type }} Package </span></div>
 			<div class="col-sm-4">	<div style='padding-top:10px; border-radius:7px; font-weight:bold; font-size:16px;'><a class='link-upgrade_pkg' style='color:#444;'><i class='fa fa-gift'></i> {{ trans('label.buy_package') }}</a></div>
 			</div>
-			<div class="col-sm-4">	@if($employer_info[0]->package_type != 'Basic')(<div id="expire" style='color:red; font-weight:bold; font-size:16px; padding-top:10px;'></div> @endif</div>
+			<div class="col-sm-4">	@if($employer_info[0]->package_type != 'Basic')<div id="expire" style='color:red; font-weight:bold; font-size:16px; padding-top:10px;'></div> @endif</div>
 		</div>
 	</div>
 	<div class="col-sm-12" style='margin-top:10px;'>

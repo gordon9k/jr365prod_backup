@@ -347,6 +347,14 @@ class HomeController extends Controller
 	 		return $result;})
 	 		->make(true);
 	 }
+
+	 public function androidDownload() {
+	 	return view('download.android');
+	 }
+
+	 public function iosDownload() {
+	 	return view('download.ios');
+	 }
 	 
 	 /*
 	  public function getAllJobCategory1(){

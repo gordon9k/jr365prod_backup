@@ -4,6 +4,8 @@ namespace jobready365\Http\Controllers;
 
 use Illuminate\Http\Request;
 use jobready365\application;
+use jobready365\applicant_topup;
+use jobready365\Http\Controllers\ApplicantTopupController;
 use Log;
 use Input;
 use Redirect;
@@ -46,24 +48,59 @@ class ApplicationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    // to check applicant topup user
+    public function checkValidBill($user_id){
+        $result = DB::table('applicant_topups')
+        ->select('*')
+        ->where('user_id','=',$user_id)
+        ->get();
+        
+        return $result;
+    }
+
+    // to check applicant topup user
+    public function checkApplyPackage($user_id){
+        
+        $result = DB::table('applicant_topups')
+        ->select(DB::raw('count(*) as count'))
+        ->where('user_id','=',$user_id)
+        ->get();
+        //Log::info('key used'.$result);
+        return $result;      
+    }
+
     public function store()
     {   
+        // $ret_bill = $this->checkApplyPackage(Auth::user()->id);
+
+        // $result = Log::info('get count: '.$this->checkValidBill(Input::get('user_id')));
+        // $result = $this->checkValidBill(Input::get('user_id')));
+
+        // dd($result);
+
     	Log::info('store: '.Input::get('hid'));     	
         $msg = '';
-        try{
-            $application = new application;
-            if($this->checkduplicate(Auth::user()->id) == 0){             
-                $application->applicant_id = Auth::user()->id;    
-                $msg = $this->apply_job($application);
-                Session::flash('flash_message', $msg);
-            } 
-            else{
-                Session::flash('duplicate_message', "You already applied for this job.");
-            }                   
-        }catch (\Exception $e){
-            Session::flash('duplicate_message', 'Cannot apply');
-            return redirect()->back();
-        }
+        // if ($this->checkApplyPackage(Input::get('user_id'))) {
+            // already buy apply package to show.
+            try{
+                $application = new application;
+                if($this->checkduplicate(Auth::user()->id) == 0){             
+                    $application->applicant_id = Auth::user()->id;    
+                    $msg = $this->apply_job($application);
+                    Session::flash('flash_message', $msg);
+                } 
+                else{
+                    Session::flash('duplicate_message', "You already applied for this job.");
+                }                   
+            }catch (\Exception $e){
+                Session::flash('duplicate_message', 'Cannot apply');
+                return redirect()->back();
+            }
+        // } else {
+            // to buy apply package.
+
+        // }
         return redirect()->back();
     }
 
