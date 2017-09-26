@@ -7,14 +7,13 @@ namespace jobready365\Http\Controllers;
 use jobready365\User;
 use jobready365\employer;
 use jobready365\applicant;
-use jobready365\Http\Controllers\Controller;
+use jobready365\Http\Controllers;
 
 use Ramsey\Uuid\Uuid;
 use jobready365\JR365;
 use Validator;
 
 use Illuminate\Http\Request;
-// use jobready365\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 // use Illuminate\Auth;
 use Auth;
@@ -36,15 +35,6 @@ class RegistrationController extends Controller
 	{
 		return view('sessions.register');
 	}
-
-	// protected function validator(array $data)
-	// {
-	// 	return Validator::make($data, [
-	// 		'telephone_no' => 'required|min:8|max:255|unique:users',
-	// 		'password' => 'required|min:6|confirmed',
-	// 		'user_type' => 'required',
-	// 		]);
-	// }	
 
 	public function store(Request $request)
 	{

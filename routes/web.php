@@ -35,9 +35,8 @@ Route::group(['prefix' => $locale], function (){
 	Route::post('register', 'RegistrationController@store')->name('storeRegister');
 	// Route::group(['middleware' => ['is.active']], function () {
 	Route::get('confirm/{phone}', 'RegistrationController@confirm')->name('confirm');
-	Route::get('resend/{phone}', 'RegistrationController@resendCode')->name('resendCode');
-	// });
-	Route::post('confirmation', 'RegistrationController@resendCode')->name('confirmCode');
+	
+	Route::post('confirmation', 'RegistrationController@confirmCode')->name('confirmCode');
 	
 	/**
 	 * Authentication Route

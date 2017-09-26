@@ -52,7 +52,7 @@ $(document).ready(function() {
 });
 </script>
 
-<section id="confirm">
+<section id="register">
 
     <div class="container">
        <form role="form" method="POST" action="{{ route('confirmCode') }}">
