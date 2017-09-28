@@ -65,7 +65,7 @@ $(document).ready(function() {
                <div class="col-sm-4 dashboard">
                     <h2>Please insert your confirmation code</h2>
 
-                    {{-- <a href="{{ route('resendCode', compact('user')) }}" class="pull-right" style="margin-right: 14px; margin-bottom: 5px;">Resend Code?</a><br> --}}
+                    <a href="{{ route('resendCode', compact('user')) }}" class="pull-right" style="margin-right: 14px; margin-bottom: 5px;">Resend Code?</a><br>
 
                     @include ('errors.confirm-error')
 

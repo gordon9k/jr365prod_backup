@@ -39,7 +39,7 @@ class RegistrationController extends Controller
 	public function store(Request $request)
 	{
 		$this->validate($request, [
-            'telephone_no' => 'required|min:8|max:255|unique:users',
+            'telephone_no' => 'required|min:9|max:14|unique:users',
 			'password' => 'required|min:4|confirmed',
 			'user_type' => 'required',
         ]);
@@ -67,19 +67,19 @@ class RegistrationController extends Controller
 		return redirect()->route('confirm', ['phone' => $user->telephone_no]);
 	}
 
-	// public function resendCode($user)
-	// {
-	// 	$user = User::where('id', $user)->firstOrFail();
+	public function resendCode($user)
+	{
+		$user = User::where('id', $user)->firstOrFail();
 
-	// 	// return $user;
+		// return $user;
 
-	// 	JR365::resendOtp($user);
+		JR365::resendOtp($user);
 
-	// 	// return redirect()->back();
-	// 	// return view('sessions.confirmation', compact('user'));
-	// 	return redirect()->route('confirm', ['phone' => $user->telephone_no]);
+		// return redirect()->back();
+		// return view('sessions.confirmation', compact('user'));
+		return redirect()->route('confirm', ['phone' => $user->telephone_no]);
 
-	// }
+	}
 
 	public function confirm($phone)
 	{
