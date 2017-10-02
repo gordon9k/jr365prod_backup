@@ -13,6 +13,7 @@
 
 Route::post('/login', ['uses' => 'ApiController@authenticate']);
 Route::post('/register', ['uses' => 'ApiController@registerUser']);
+Route::post('/confirmation', ['uses' => 'ApiController@confirmationUser']);
 
 Route::get('/city',  [ 'uses' => 'ApiController@getAllCity_api']);
 Route::get('/township/{cityid?}',  [ 'uses' => 'ApiController@getAllTownship_api']);
