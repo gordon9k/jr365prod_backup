@@ -32,7 +32,12 @@ use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
 class ApiController extends Controller
-{	
+{
+	public function version()
+	{
+		return response()->json(['error' => false, 'version'=>'B1', 'status_code' => 200]);
+	}
+	
 	public function randomId()
 	{	
 		$string = "";
@@ -147,7 +152,7 @@ class ApiController extends Controller
 			}
 			$sendConfirm = ['phone' => $user->telephone_no, 'otp' => $user->activation_code];
 	
-			JR365::sendOtp($sendConfirm);
+			// JR365::sendOtp($sendConfirm);
 			// app('jobready365\Http\Controllers\Auth\RegisterController')->createInfo($user_id, $data);
 			// app('jobready365\Http\Controllers\RegistrationController')->createInfo($user);
 			// Log::info('user register ok');

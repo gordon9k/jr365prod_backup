@@ -11,6 +11,8 @@
  |
  */
 
+Route::get('/version', ['uses' => 'ApiController@version']);
+
 Route::post('/login', ['uses' => 'ApiController@authenticate']);
 Route::post('/register', ['uses' => 'ApiController@registerUser']);
 Route::post('/confirmation', ['uses' => 'ApiController@confirmationUser']);
